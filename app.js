@@ -19,7 +19,7 @@ var commentRoutes = require("./routes/comments"),
 
     //
     //mongodb+srv://user:<password>@cluster0-4p55w.mongodb.net/test?retryWrites=true&w=majority
-    var uri=process.env.MONGO_URI || "mongodb+srv://user:mongodbuser@cluster0-4p55w.mongodb.net/test?retryWrites=true&w=majority";
+    var uri=process.env.MONGO_URI || "mongodb://localhost:27017/yelp_camp_v3";
 mongoose.connect(uri,{useNewUrlParser: true});
 app.use(bodyparser.urlencoded({extended:true}));
 app.set("view engine","ejs");
