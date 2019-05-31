@@ -18,8 +18,8 @@ var commentRoutes = require("./routes/comments"),
     //
 
     //
-   
-mongoose.connect("mongodb+srv://user:mongodbuser@cluster0-jfpyl.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true});
+    //mongodb+srv://user:<password>@cluster0-4p55w.mongodb.net/test?retryWrites=true&w=majority
+mongoose.connect("mongodb+srv://user:mongodbuser@cluster0-4p55w.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true});
 app.use(bodyparser.urlencoded({extended:true}));
 app.set("view engine","ejs");
 app.use(express.static(__dirname + "/public"));
@@ -50,9 +50,9 @@ app.use(function(req,res,next){
 app.use(indexRoutes);
 app.use(campgroundsRoutes);
 app.use(commentRoutes);
-
+ const port = process.env.PORT || 3000;
 
  
-app.listen(3000,process.env.IP,function(){
+app.listen(port,process.env.IP,function(){
    console.log("Server Stared!!!"); 
 });
